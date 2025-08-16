@@ -1,14 +1,22 @@
 {
   "name": "ai-flower-recognition",
   "version": "1.0.0",
-  "description": "AI识花小程序 - 通过智谱AI识别花朵名称",
-  "main": "index.html",
+  "description": "AI花草识别小程序 - 通过智谱AI识别花朵名称",
+  "main": "pages/index.js",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'No build step required for static files'",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
     "deploy": "vercel --prod"
   },
   "keywords": [
+    "AI花草识别",
+    "花识别",
+    "花草识别",
+    "智谱花草识别",
+    "AI识花",
+    "花朵识别",
     "ai",
     "flower",
     "recognition",
@@ -17,7 +25,11 @@
   ],
   "author": "AI识花开发团队",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "next": "^14.2.31",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "vercel": "^32.0.0"
   },

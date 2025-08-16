@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# 优化爬虫抓取
+Crawl-delay: 1
+
+# 站点地图
+Sitemap: https://your-domain.vercel.app/sitemap.xml
+
+# 禁止抓取的路径
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# 针对特定搜索引擎的优化
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
