@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI识花 - 拍下花朵，即刻知晓它的名字</title>
+    <meta name="description" content="AI识花小程序，通过智谱AI快速识别花朵名称">
+    <meta name="keywords" content="AI识花,花朵识别,智谱AI,植物识别">
+    <meta name="author" content="AI识花开发团队">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="AI识花 - 拍下花朵，即刻知晓它的名字">
+    <meta property="og:description" content="AI识花小程序，通过智谱AI快速识别花朵名称">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="AI识花 - 拍下花朵，即刻知晓它的名字">
+    <meta property="twitter:description" content="AI识花小程序，通过智谱AI快速识别花朵名称">
+    <meta property="twitter:image" content="">
+
+    <!-- PWA支持 -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="AI识花">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部标题 -->
+        <header class="header">
+            <h1 class="title">🌸 AI识花</h1>
+            <p class="subtitle">拍下花朵，即刻知晓它的名字</p>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 上传区域 -->
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📷</div>
+                    <p class="upload-text">点击上传图片或拍照</p>
+                    <p class="upload-hint">支持 JPG、PNG、WEBP 格式，最大 5MB</p>
+                </div>
+                <input type="file" id="fileInput" accept="image/jpeg,image/jpg,image/png,image/webp" capture="environment">
+            </div>
+
+            <!-- 图片预览区域 -->
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" src="" alt="预览图片">
+                </div>
+                <div class="preview-actions">
+                    <button class="btn btn-secondary" id="retryBtn">重新选择</button>
+                    <button class="btn btn-primary" id="identifyBtn">开始识别</button>
+                </div>
+            </div>
+
+            <!-- 加载状态 -->
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">正在识别中，请稍候...</p>
+            </div>
+
+            <!-- 结果展示区域 -->
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-content">
+                    <div class="result-image">
+                        <img id="resultImage" src="" alt="识别的花朵">
+                    </div>
+                    <div class="result-info">
+                        <h2 class="result-title">识别结果</h2>
+                        <div class="flower-name" id="flowerName"></div>
+                        <button class="btn btn-primary" id="newIdentifyBtn">再试一次</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 错误提示区域 -->
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-content">
+                    <div class="error-icon">⚠️</div>
+                    <h3 class="error-title">识别失败</h3>
+                    <p class="error-message" id="errorMessage"></p>
+                    <button class="btn btn-primary" id="errorRetryBtn">重新尝试</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>Powered by 智谱AI GLM-4.5V</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
