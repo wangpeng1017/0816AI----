@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "ai-flower-recognition",
+  "framework": "nextjs",
   "functions": {
     "api/identify.js": {
       "maxDuration": 30
